@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preload" as="image" href="/images/common/hr.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浅草寺观音签</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#d32f2f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Omikuji" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Noto+Serif+JP:wght@400;700&family=Nanum+Brush+Script&family=Noto+Serif+KR:wght@400;700&family=Tangerine:wght@700&family=Kaushan+Script&family=Satisfy&family=Marck+Script&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <script src="/i18n.js"></script>
+    <script src="/translations.js"></script>
+    <script src="/jpnTranslations.js"></script>
+    <script src="/korTranslations.js"></script>
+    <script src="/fraTranslations.js"></script>
+    <script src="/spaTranslations.js"></script>
+    <script src="/porTranslations.js"></script>
+    <script src="/rusTranslations.js"></script>
+    <script src="/data.js"></script>
+    <script>
+      try {
+        window.translations = window.translations || translations
+      } catch {}
+      try {
+        window.engTranslations = window.engTranslations || engTranslations
+      } catch {}
+      try {
+        window.jpnTranslations = window.jpnTranslations || jpnTranslations
+      } catch {}
+      try {
+        window.korTranslations = window.korTranslations || korTranslations
+      } catch {}
+      try {
+        window.fraTranslations = window.fraTranslations || fraTranslations
+      } catch {}
+      try {
+        window.spaTranslations = window.spaTranslations || spaTranslations
+      } catch {}
+      try {
+        window.porTranslations = window.porTranslations || porTranslations
+      } catch {}
+      try {
+        window.rusTranslations = window.rusTranslations || rusTranslations
+      } catch {}
+      try {
+        window.info = window.info || info
+      } catch {}
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

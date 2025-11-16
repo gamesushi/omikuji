@@ -1,0 +1,390 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: #E12613;
+    overflow: hidden;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.title {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    min-height: 80px;
+    width: 100%;
+    max-width: 800px;
+    background-image: url('images/chs/title.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 100;
+}
+
+.hr {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    min-height: 40px;
+    width: 100%;
+    max-width: 800px;
+    background-image: url('images/chs/hr.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 100;
+}
+
+.footer {
+    height: 150px;
+    width: 100%;
+    max-width: 800px;
+    background-image: url('/images/common/footer.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.content {
+    margin-top: 140px;
+    margin-bottom: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.icons {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    background-image: url('images/chs/icons.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: -60px auto 0;
+    position: relative;
+    top: -40px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.sign-text {
+    background: #ffffff;
+    width: 70%;
+    height: 100%;
+    max-height: 55vh;
+    box-sizing: border-box;
+    border: #E12613 8px double;
+    margin: auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.buttons {
+    position: fixed;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+button {
+    width: 150px;
+    height: 46px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.draw-Daily {
+    background-image: url('/images/chs/draw-daily.webp');
+}
+
+.draw-manually {
+    background-image: url('./images/draw-manually.webp');
+}
+
+.decode {
+    background-image: url('./images/decode.webp');
+}
+
+.redraw {
+    background-image: url('./images/redraw.webp');
+}
+
+.back {
+    background-image: url('./images/back.webp');
+}
+
+.share {
+    background-image: url('./images/share.webp');
+}
+
+select.draw-manually {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.picker-container {
+    width: 150px;
+    height: 46px;
+    position: relative;
+    background-image: url('/images/chs/draw-manually.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.draw-Daily, .decode, .redraw, .back, .share {
+    display: block;
+    background-size: contain;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons, .card {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* 修改状态显示逻辑 */
+.home-buttons {
+    display: none;  /* 默认隐藏 */
+}
+
+/* 当处于首页状态时显示 */
+body[data-state="home"] .home-buttons {
+    display: flex;
+}
+
+/* 确保选择器和按钮的大小一致 */
+.picker-container, 
+.draw-Daily, 
+select.draw-manually {
+    width: 150px;
+    height: 46px;
+}
+
+/* 状态控制 */
+[data-state="home"] .home-buttons {
+    display: flex;
+}
+
+[data-state="card"] .home-buttons,
+[data-state="text"] .home-buttons {
+    display: none;
+}
+
+/* 隐藏语言切换按钮 */
+.lang-switch {
+    display: none !important;  /* 使用 !important 确保隐藏 */
+}
+
+/* 语言相关的图片路径 */
+[data-lang="chs"] .title {
+    background-image: url('/images/chs/title.webp');
+}
+
+[data-lang="eng"] .title {
+    background-image: url('/images/eng/title.webp');
+}
+
+
+[data-lang="chs"] .draw-Daily {
+    background-image: url('/images/chs/draw-daily.webp');
+}
+
+[data-lang="eng"] .draw-Daily {
+    background-image: url('/images/eng/draw-daily.webp');
+}
+
+[data-lang="chs"] .draw-manually {
+    background-image: url('/images/chs/draw-manually.webp');
+}
+
+[data-lang="eng"] .draw-manually {
+    background-image: url('/images/eng/draw-manually.webp');
+}
+
+[data-lang="chs"] .decode {
+    background-image: url('/images/chs/decode.webp');
+}
+
+[data-lang="eng"] .decode {
+    background-image: url('/images/eng/decode.webp');
+}
+
+[data-lang="chs"] .redraw {
+    background-image: url('/images/chs/redraw.webp');
+}
+
+[data-lang="eng"] .redraw {
+    background-image: url('/images/eng/redraw.webp');
+}
+
+[data-lang="chs"] .back {
+    background-image: url('/images/chs/back.webp');
+}
+
+[data-lang="eng"] .back {
+    background-image: url('/images/eng/back.webp');
+}
+
+[data-lang="chs"] .share {
+    background-image: url('/images/chs/share.webp');
+}
+
+[data-lang="eng"] .share {
+    background-image: url('/images/eng/share.webp');
+}
+
+/* 确保菜单显示时的样式 */
+.lang-menu.show {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 卡片状态下的按钮容器 */
+.buttons button {
+    margin: 0 20px;
+}
+
+/* 首页按钮容器 */
+.home-buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+/* 解读和重抽按钮的特殊间距 */
+.decode, .redraw {
+    margin: 0 30px !important;
+}
+
+/* 隐藏原生选择器但保持可点击 */
+.draw-manually {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+[data-lang="chs"] .picker-container {
+    background-image: url('/images/chs/draw-manually.webp');
+}
+
+[data-lang="eng"] .picker-container {
+    background-image: url('/images/eng/draw-manually.webp');
+}
+
+/* 添加响应式样式 */
+@media screen and (max-width: 1200px) {
+    .icons {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icons {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icons {
+        width: 70%;
+        height: 70%;
+    }
+}
