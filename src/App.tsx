@@ -366,7 +366,11 @@ function App() {
               <div className="btn-box">
                 <button id="payDrawBtn" className="btn_m decorated-button pay-btn" onClick={() => window.open('https://ko-fi.com/gamesushi?amount=100', '_blank')}>
                   <span className="btn_inner">
-                    <span className="coin-icon">🪙</span>
+                    <svg className="coin-icon" width="22" height="22" viewBox="0 0 100 100" style={{ verticalAlign: 'middle' }}>
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="white" strokeWidth="4" />
+                      <circle cx="50" cy="50" r="38" fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
+                      <text x="50" y="65" fontFamily="Arial, sans-serif" fontSize="40" fontWeight="bold" fill="white" textAnchor="middle">100</text>
+                    </svg>
                     <span className="kaiti-text">100円</span>
                   </span>
                   <span className="corner-tr"></span>
