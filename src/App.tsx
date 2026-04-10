@@ -361,27 +361,42 @@ function App() {
           </>
         )}
         {state === 'home' && (
-        <div className="home-buttons">
-          <div className="btn-box">
-            <button id="drawDailyBtn" className="btn_m decorated-button" onClick={drawDaily}>
-              <span className="btn_inner">{t.buttons?.daily || '每日抽签'}</span>
-              <span className="corner-tr"></span>
-              <span className="corner-bl"></span>
-              <span className="corner-br"></span>
-            </button>
+          <div className="home-buttons">
+            <div className="pay-btn-container">
+              <div className="btn-box">
+                <button id="payDrawBtn" className="btn_m decorated-button pay-btn" onClick={() => window.open('https://ko-fi.com/gamesushi?amount=100', '_blank')}>
+                  <span className="btn_inner">
+                    <span className="coin-icon">🪙</span>
+                    <span className="kaiti-text">100円</span>
+                  </span>
+                  <span className="corner-tr"></span>
+                  <span className="corner-bl"></span>
+                  <span className="corner-br"></span>
+                </button>
+              </div>
+            </div>
+            <div className="home-main-buttons">
+              <div className="btn-box">
+                <button id="drawDailyBtn" className="btn_m decorated-button" onClick={drawDaily}>
+                  <span className="btn_inner">{t.buttons?.daily || '每日抽签'}</span>
+                  <span className="corner-tr"></span>
+                  <span className="corner-bl"></span>
+                  <span className="corner-br"></span>
+                </button>
+              </div>
+              <div className="btn-box picker-container">
+                <button id="manualPickBtn" className="btn_m decorated-button" onClick={() => (document.getElementById('manualPicker') as HTMLSelectElement | null)?.focus()}>
+                  <span className="btn_inner">{t.buttons?.manual || '手动选签'}</span>
+                  <span className="corner-tr"></span>
+                  <span className="corner-bl"></span>
+                  <span className="corner-br"></span>
+                  <select id="manualPicker" className="draw-manually" defaultValue="" onChange={selectManual}>
+                    <option value="" disabled>请选择...</option>
+                  </select>
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="btn-box picker-container">
-            <button id="manualPickBtn" className="btn_m decorated-button" onClick={() => (document.getElementById('manualPicker') as HTMLSelectElement | null)?.focus()}>
-              <span className="btn_inner">{t.buttons?.manual || '手动选签'}</span>
-              <span className="corner-tr"></span>
-              <span className="corner-bl"></span>
-              <span className="corner-br"></span>
-              <select id="manualPicker" className="draw-manually" defaultValue="" onChange={selectManual}>
-                <option value="" disabled>请选择...</option>
-              </select>
-            </button>
-          </div>
-        </div>
         )}
       </div>
 

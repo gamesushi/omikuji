@@ -1145,3 +1145,91 @@ a.btn_m:active {
 .buttons .btn_m .btn_inner { display: inline-flex; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .buttons .btn-box { display: flex; align-items: stretch; width: var(--bottom-btn-width); }
 @media (max-width: 600px) { .buttons .btn-box { flex: 0 0 var(--bottom-btn-width); width: var(--bottom-btn-width); min-width: var(--bottom-btn-width); max-width: var(--bottom-btn-width); } }
+
+/* 100円 支付按钮样式 */
+.pay-btn {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+.pay-btn:hover {
+    background: linear-gradient(135deg, #f7d774 0%, #feb096 100%) !important;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+}
+
+.pay-btn .btn_inner {
+    color: #fff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.kaiti-text {
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.coin-icon {
+    display: inline-block;
+    animation: coinFloat 3s ease-in-out infinite;
+    font-size: 1.2em;
+}
+
+@keyframes coinFloat {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-3px) rotate(10deg); }
+}
+
+/* 适配移动端按钮容器 */
+@media (max-width: 600px) {
+    .home-buttons {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 8px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .home-buttons .btn-box {
+        flex: 0 0 120px !important;
+        width: 120px !important;
+        min-width: 120px !important;
+    }
+}
+
+/* 首页按钮布局调整 */
+.home-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.pay-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .home-buttons {
+        position: fixed !important;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + var(--buttons-bottom-mobile)) !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        padding: 0 12px !important;
+    }
+}
