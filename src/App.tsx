@@ -137,18 +137,13 @@ function App() {
     setState('card')
   }
 
-  const redraw = () => {
-    const msg = t.messages?.confirmRedraw || '是否返回首页重抽？\n\n点击"确定"返回首页\n点击"取消"继续留在当前页面'
-    if (redrawReady) {
-      if (confirm(msg)) {
-        setRedrawReady(false)
-        try { localStorage.removeItem('redraw') } catch {}
-        setState('home')
-      }
-      return
+  const redraw = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
     }
-    setRedrawReady(true)
-    try { localStorage.setItem('redraw', '1') } catch {}
+    setRedrawReady(false)
+    try { localStorage.removeItem('redraw') } catch {}
     setState('home')
   }
 
