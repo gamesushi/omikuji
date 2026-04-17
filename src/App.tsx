@@ -361,9 +361,21 @@ function App() {
           </>
         )}
         {state === 'home' && (
-          <div className="home-buttons">
-            <div className="pay-btn-container">
-              <div className="btn-box">
+          <div className="buttons home-buttons" style={{ overflow: 'visible', paddingTop: '45px' }}>
+            <style>{`@media (max-width: 600px) { .home-buttons { overflow: visible !important; justify-content: center !important; } .home-buttons .btn-box { width: 150px !important; min-width: 150px !important; flex: 0 0 150px !important; } }`}</style>
+            <div className="pay-btn-container" style={{ position: 'relative', marginTop: '10px', marginBottom: '25px', display: 'flex', justifyContent: 'center', overflow: 'visible', zIndex: 2000 }}>
+              <div 
+                style={{ 
+                  position: 'absolute', background: '#d32f2f', color: '#fff', padding: '3px 8px', 
+                  borderRadius: '6px', fontSize: '11px', zIndex: 2000, top: '-38px', left: '50%', 
+                  transform: 'translateX(-50%)', whiteSpace: 'nowrap', boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                  pointerEvents: 'none', fontWeight: 'bold'
+                }}
+              >
+                {t.hints?.hint_pay}
+                <div style={{ position: 'absolute', bottom: '-6px', left: '50%', transform: 'translateX(-50%)', width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid #d32f2f' }}></div>
+              </div>
+              <div className="btn-box" style={{ position: 'relative' }}>
                 <button id="payDrawBtn" className="btn_m decorated-button pay-btn" onClick={() => window.open('https://ko-fi.com/gamesushi?amount=100', '_blank')}>
                   <span className="btn_inner">
                     <svg className="coin-icon" width="22" height="22" viewBox="0 0 100 100" style={{ verticalAlign: 'middle' }}>
@@ -380,7 +392,18 @@ function App() {
               </div>
             </div>
             <div className="home-main-buttons">
-              <div className="btn-box">
+              <div className="btn-box" style={{ position: 'relative', marginBottom: '8px', zIndex: 2000 }}>
+                <div 
+                  style={{ 
+                    position: 'absolute', background: '#d32f2f', color: '#fff', padding: '3px 8px', 
+                    borderRadius: '6px', fontSize: '11px', zIndex: 2000, top: '-32px', left: '50%', 
+                    transform: 'translateX(-50%)', whiteSpace: 'nowrap', boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                    pointerEvents: 'none', fontWeight: 'bold'
+                  }}
+                >
+                  {t.hints?.hint_draw}
+                  <div style={{ position: 'absolute', bottom: '-6px', left: '50%', transform: 'translateX(-50%)', width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid #d32f2f' }}></div>
+                </div>
                 <button id="drawDailyBtn" className="btn_m decorated-button" onClick={drawDaily}>
                   <span className="btn_inner">{t.buttons?.daily || '每日抽签'}</span>
                   <span className="corner-tr"></span>

@@ -21,6 +21,10 @@ const translations = {
             confirmRedraw: '是否返回首页重抽？\n\n点击"确定"返回首页\n点击"取消"继续留在当前页面',
             loading: '加载中...',
             shareSuccess: '分享链接已复制到剪贴板'
+        },
+        hints: {
+            hint_pay: '第一步，支付香火钱，全凭心意',
+            hint_draw: '第二步，点击抽签'
         }
     },
     eng: {
@@ -45,11 +49,15 @@ const translations = {
             confirmRedraw: 'Want to draw again?\n\nClick "OK" to return\nClick "Cancel" to stay',
             loading: 'Loading...',
             shareSuccess: 'Share link copied to clipboard'
+        },
+        hints: {
+            hint_pay: 'Step 1: Make an offering, as you wish',
+            hint_draw: 'Step 2: Tap to draw'
         }
     },
     jpn: {
         title: '浅草寺おみくじ',
-        pleaseSelect: '選んでください...',
+        pleaseSelect: '选んでください...',
         fortune: '第{0}番',
         sections: {
             fortune_number: '第{0}番',
@@ -69,9 +77,12 @@ const translations = {
             confirmRedraw: 'トップページに戻って引き直しますか？\n\n"OK"で戻る\n"キャンセル"で現在のページに留まる',
             loading: '読み込み中...',
             shareSuccess: 'リンクをコピーしました'
+        },
+        hints: {
+            hint_pay: '第一歩、お賽銭を。お心次第で。',
+            hint_draw: '第二歩、おみくじを引く。'
         }
-    }
-    ,
+    },
     kor: {
         title: '센소지 오미쿠지',
         pleaseSelect: '선택하세요...',
@@ -94,6 +105,10 @@ const translations = {
             confirmRedraw: '홈으로 돌아가 다시 뽑을까요?\n\n"확인": 돌아가기\n"취소": 현재 페이지 유지',
             loading: '로딩 중...',
             shareSuccess: '링크가 복사되었습니다'
+        },
+        hints: {
+            hint_pay: '1단계, 복채를 내세요. 마음 가는 대로.',
+            hint_draw: '2단계, 점괘를 뽑으세요.'
         }
     },
     fra: {
@@ -118,6 +133,10 @@ const translations = {
             confirmRedraw: 'Revenir à l’accueil pour tirer à nouveau ?\n\n"OK" : revenir\n"Annuler" : rester',
             loading: 'Chargement...',
             shareSuccess: 'Lien copié'
+        },
+        hints: {
+            hint_pay: 'Étape 1, faites une offrande, selon votre cœur',
+            hint_draw: 'Étape 2, tirez votre fortune'
         }
     },
     spa: {
@@ -142,6 +161,10 @@ const translations = {
             confirmRedraw: '¿Volver al inicio para sacar de nuevo?\n\n"OK": volver\n"Cancelar": quedarse',
             loading: 'Cargando...',
             shareSuccess: 'Enlace copiado'
+        },
+        hints: {
+            hint_pay: 'Paso 1, haz una ofrenda, según tu deseo',
+            hint_draw: 'Paso 2, saca tu fortuna'
         }
     },
     por: {
@@ -166,6 +189,10 @@ const translations = {
             confirmRedraw: 'Voltar à página inicial para sortear novamente?\n\n"OK": voltar\n"Cancelar": ficar',
             loading: 'Carregando...',
             shareSuccess: 'Link copiado'
+        },
+        hints: {
+            hint_pay: 'Passo 1, faça uma oferta, como desejar',
+            hint_draw: 'Passo 2, tire sua sorte'
         }
     },
     rus: {
@@ -190,6 +217,10 @@ const translations = {
             confirmRedraw: 'Вернуться на главную и тянуть снова?\n\n"OK": вернуться\n"Отмена": остаться',
             loading: 'Загрузка...',
             shareSuccess: 'Ссылка скопирована'
+        },
+        hints: {
+            hint_pay: 'Шаг 1: сделайте пожертвование, от чистого сердца',
+            hint_draw: 'Шаг 2: вытяните предсказание'
         }
     }
 };
