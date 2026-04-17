@@ -9,7 +9,7 @@ function App() {
   const [cardId, setCardId] = useState<number>(0)
   const [cardFront, setCardFront] = useState<boolean>(true)
   const [flipDir, setFlipDir] = useState<string | null>(null)
-  const [redrawReady, setRedrawReady] = useState<boolean>(false)
+
   const [homeEnter, setHomeEnter] = useState<boolean>(true)
   const [textReveal, setTextReveal] = useState<boolean>(false)
   const [homeFill, setHomeFill] = useState<boolean>(false)
@@ -101,8 +101,7 @@ function App() {
     if (savedId) {
       setCardId(savedId)
     }
-    const savedRedraw = !!localStorage.getItem('redraw')
-    setRedrawReady(savedRedraw)
+
     buildPicker(t)
     const onDocClick = (e: MouseEvent) => {
       const btn = document.getElementById('langBtn')
@@ -142,7 +141,7 @@ function App() {
       e.preventDefault()
       e.stopPropagation()
     }
-    setRedrawReady(false)
+
     try { localStorage.removeItem('redraw') } catch {}
     setState('home')
   }
