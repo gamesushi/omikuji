@@ -1311,3 +1311,4 @@ a.btn_m:active {
  margin-bottom: 40px !important;
  }
 }
+@font-face { font-family: 'logofont'; src: url('/fonts/logo.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
