@@ -1,5 +1,5 @@
 // 移除 export，改为直接定义全局变量
-const info = [
+window.info = [
   {
     "编号": 1,
     "吉凶": "吉",

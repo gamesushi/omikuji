@@ -253,7 +253,7 @@ function App() {
       `<div class="sign-section"><h3>${t.sections?.interpretation || '建议'}</h3><p>${pred}</p></div>`
     ]
     return sections.join('')
-  }, [cardId, lang, t, w.info, w.engTranslations, w.jpnTranslations])
+  }, [cardId, lang, t, w.info, w.engTranslations, w.jpnTranslations, w.korTranslations, w.fraTranslations, w.spaTranslations, w.porTranslations, w.rusTranslations])
 
   return (
     <div className="bg">

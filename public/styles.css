@@ -1312,3 +1312,7 @@ a.btn_m:active {
  }
 }
 @font-face { font-family: 'logofont'; src: url('/fonts/logo.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+
+body[data-lang='cht'] { font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif !important; }
+body[data-lang='cht'] .sign-title, body[data-lang='cht'] .sign-section-title { font-family: 'Noto Serif TC', 'PMingLiU', serif !important; }
+body[data-lang='cht'] .sign-text, body[data-lang='cht'] .poem-text { font-family: 'Noto Serif TC', 'PMingLiU', serif !important; line-height: 1.8 !important; }
